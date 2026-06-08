@@ -49,8 +49,10 @@ requirements:
 
 tests:
   - script:
-      - panache --help
-      - panache --version
+      - if: build_platform == host_platform
+        then:
+          - panache --help
+          - panache --version
   - package_contents:
       bin:
         - panache
