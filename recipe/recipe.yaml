@@ -1,5 +1,5 @@
 context:
-  version: "2.57.0"
+  version: "2.59.0"
 
 package:
   name: panache
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jolars/panache/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 5b96301d426937bcc1e986eaa0b841f7f9f2e725820f1be254f394a0769265ab
+  sha256: 06e3e73ce9515c4c2f781c4c6cfbeafbd3a72120e1e74b3258daf2184fa4c858
 
 build:
   number: 0
@@ -18,7 +18,7 @@ build:
     content:
       - if: unix
         then:
-          - cargo auditable install --no-track --locked --bins --root="$PREFIX" --path=.
+          - cargo auditable install --no-track --locked --bin=panache --root="$PREFIX" --path=.
           # copy man page and shell completion files
           - mkdir -p "$PREFIX"/share/man/man1 "$PREFIX"/share/bash-completion/completions "$PREFIX"/share/fish/vendor_completions.d "$PREFIX"/share/zsh/site-functions
           - cp target/man/panache.1            "$PREFIX"/share/man/man1/panache.1
@@ -27,7 +27,7 @@ build:
           - cp target/completions/_panache     "$PREFIX"/share/zsh/site-functions/_panache
       - if: win
         then:
-          - cargo auditable install --no-track --locked --bins --root="%LIBRARY_PREFIX%" --path=.
+          - cargo auditable install --no-track --locked --bin=panache --root="%LIBRARY_PREFIX%" --path=.
           # copy man page and shell completion files
           - mkdir "%LIBRARY_PREFIX%"\share\man\man1
           - mkdir "%LIBRARY_PREFIX%"\share\bash-completion\completions
