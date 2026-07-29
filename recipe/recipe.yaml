@@ -1,5 +1,5 @@
 context:
-  version: "3.0.1"
+  version: "3.0.2"
 
 package:
   name: panache
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jolars/panache/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b99c175ad8b818910a009ca33e91d0b1822d9e2e3d7409ebd7d6054f54ae7587
+  sha256: 876958e4e89292a1456932c86ce9ec3e90831149d33c28ec6f13eda4f9409083
 
 build:
   number: 0
